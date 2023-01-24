@@ -1,0 +1,10 @@
+header{
+    background: rgb(23,18,101);
+    background: linear-gradient(90deg, rgba(23,18,101,1) 1%, rgba(0,0,148,1) 40%, rgba(0,212,255,1) 100%);
+}
+#input-div{
+    /* background-color: rgb(255, 196, 196); */
+}
+#output-div{
+    /* background-color: rgb(198, 198, 255); */
+}
