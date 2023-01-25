@@ -14,7 +14,7 @@ You can view the published webpage [here](https://spawze.github.io/Weather-Dashb
 Select your search type, either by city name, or zip code, then enter your search. If it has a match, all of the weather info will automatically display.
 Once a successful search is made, it will get added to the search history section, where you can bring up old search results.
 
-![Image of the functioning webpage](Assets/images/screenshot.png)
+![Image of the functioning webpage](assets/screenshot.png)
 
 
 ## Credits
