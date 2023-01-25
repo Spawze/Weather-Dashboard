@@ -49,7 +49,7 @@ function getLatAndLong(searchTerm, searchType) {
     //only search if there is something in the search field
     if (searchTerm) {
         if (searchType == 'city') {
-            $.ajax("http://api.openweathermap.org/geo/1.0/direct?q=" + searchTerm + "&limit=1&appid=" + apiKey
+            $.ajax("https://api.openweathermap.org/geo/1.0/direct?q=" + searchTerm + "&limit=1&appid=" + apiKey
             ).then((response) => {
 
                 if (!response[0]) {
@@ -65,7 +65,7 @@ function getLatAndLong(searchTerm, searchType) {
             })
             // different api call if searching by zip code
         } else if (searchType == 'zip') {
-            $.ajax("http://api.openweathermap.org/geo/1.0/zip?zip=" + searchTerm + "&appid=" + apiKey
+            $.ajax("https://api.openweathermap.org/geo/1.0/zip?zip=" + searchTerm + "&appid=" + apiKey
             ).then((response) => {
                 console.log(response)
                 searchLat = response.lat
@@ -86,7 +86,7 @@ function getLatAndLong(searchTerm, searchType) {
 function getWeatherInfo(latitude, longitude) {
     console.log("Lat: " + latitude + "\nLon: " + longitude)
 
-    $.get("http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey + "&units=imperial"
+    $.get("https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey + "&units=imperial"
     ).done((response) => {
         console.log(response)
         //display results to page if successful
@@ -107,7 +107,7 @@ function displayResults(data) {
     var mainUnix = data.list[0].dt
     var mainDate = convertUnixToDate(mainUnix)
     mainCardDate.text(mainDate)
-    mainCardIcon.attr("src", "http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png")
+    mainCardIcon.attr("src", "https://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png")
     mainCardTempSpan.text(data.list[0].main.temp + "°F")
     mainCardWindSpan.text(data.list[0].wind.speed + "MPH")
     mainCardHumiditySpan.text(data.list[0].main.humidity + "%")
@@ -119,7 +119,7 @@ function displayResults(data) {
         var cardUnix = data.list[listIndex].dt
         var cardDate = convertUnixToDate(cardUnix)
         $(cardDateEl[i]).text(cardDate)
-        $(cardIconEl[i]).attr("src", "http://openweathermap.org/img/wn/" + data.list[listIndex].weather[0].icon + "@2x.png")
+        $(cardIconEl[i]).attr("src", "https://openweathermap.org/img/wn/" + data.list[listIndex].weather[0].icon + "@2x.png")
         $(cardTempSpan[i]).text(data.list[listIndex].main.temp + "°F")
         $(cardWindSPan[i]).text(data.list[listIndex].wind.speed + "MPH")
         $(cardHumiditySpan[i]).text(data.list[listIndex].main.humidity + "%")
